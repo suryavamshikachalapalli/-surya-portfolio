@@ -3,525 +3,459 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-<title>Surya Portfolio</title>
-
-<script src="https://cdn.tailwindcss.com"></script>
-
-<link
-href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Outfit:wght@300;400;500;600&display=swap"
-rel="stylesheet"
-/>
-
+<title>Surya Vamshika Chalapalli — Senior Full Stack Engineer</title>
+<meta name="description" content="Senior Full Stack Engineer with 5+ years building SaaS, HRMS, analytics and AI platforms with Node.js, TypeScript, React, Next.js and PostgreSQL. Based in Hyderabad, India." />
+<meta property="og:title" content="Surya Vamshika Chalapalli — Senior Full Stack Engineer" />
+<meta property="og:description" content="Scalable SaaS, HRMS and AI platforms. Node.js · TypeScript · React · Next.js · PostgreSQL." />
+<meta property="og:type" content="profile" />
+<meta name="theme-color" content="#0A0F1E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Surya Vamshika Chalapalli","jobTitle":"Senior Full Stack Engineer","address":{"@type":"PostalAddress","addressLocality":"Hyderabad","addressCountry":"IN"},"alumniOf":"Kent State University","sameAs":["https://www.linkedin.com/in/vamshika-surya-chalapalli","https://github.com/suryavamshikachalapalli"]}
+</script>
 <style>
+:root{
+  --bg:#0A0F1E; --surface:#111933; --surface-2:#16203F; --line:#243050;
+  --text:#E9ECF5; --muted:#9AA6C4; --saffron:#F0B04F; --teal:#4FD1C5;
+  --radius-lg:24px; --radius-md:14px; --radius-sm:8px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
 body{
-font-family:Outfit;
-background:
-radial-gradient(circle at top,#fff,#f3f4f6);
+  font-family:Outfit,system-ui,sans-serif;font-weight:300;color:var(--text);background:var(--bg);
+  line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  background-image:
+    radial-gradient(900px 600px at 85% -5%, rgba(79,209,197,.12), transparent 60%),
+    radial-gradient(800px 600px at -10% 10%, rgba(240,176,79,.10), transparent 60%);
+  background-repeat:no-repeat;
 }
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--saffron);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.serif{font-family:"Cormorant Garamond",Georgia,serif}
 
-.name{
-font-family:"Cormorant Garamond";
+/* NAV */
+.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(16px);background:rgba(10,15,30,.72);border-bottom:1px solid rgba(36,48,80,.6)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:22px;letter-spacing:.2px}
+.nav ul{display:flex;gap:28px;list-style:none;font-size:15px;color:var(--muted)}
+.nav ul a:hover{color:var(--text)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:12px 22px;font:500 15px Outfit,sans-serif;border:1px solid var(--line);color:var(--text);background:transparent;cursor:pointer;transition:transform .2s,background .2s,border-color .2s}
+.btn:hover{transform:translateY(-2px);border-color:#3a4c7a;background:rgba(255,255,255,.04)}
+.btn.primary{background:var(--saffron);border-color:var(--saffron);color:#1a1205;font-weight:600}
+.btn.primary:hover{background:#f6c273;border-color:#f6c273}
+.btn.small{padding:8px 16px;font-size:14px}
+
+/* HERO */
+.hero{padding:72px 0 56px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:32px;align-items:center;min-height:calc(100vh - 140px)}
+.status{display:inline-flex;align-items:center;gap:10px;padding:7px 14px;border:1px solid var(--line);border-radius:999px;font-size:14px;color:var(--muted);background:rgba(17,25,51,.6)}
+.dot{width:8px;height:8px;border-radius:50%;background:#3DDC97;box-shadow:0 0 0 0 rgba(61,220,151,.6);animation:pulse 2.2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(61,220,151,0)}100%{box-shadow:0 0 0 0 rgba(61,220,151,0)}}
+h1.name{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:clamp(52px,8vw,92px);line-height:.95;letter-spacing:-2px;margin:26px 0 20px}
+.role{font-size:clamp(18px,2.2vw,22px);color:var(--saffron);font-weight:400;margin-bottom:18px}
+.lede{max-width:520px;color:var(--muted);font-size:17px}
+.lede b{color:var(--text);font-weight:500}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.meta{display:flex;flex-wrap:wrap;gap:22px;margin-top:30px;font-size:14px;color:var(--muted)}
+.meta a:hover{color:var(--text)}
+.hero-intro > *{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+.hero-intro > *:nth-child(2){animation-delay:.08s}.hero-intro > *:nth-child(3){animation-delay:.16s}
+.hero-intro > *:nth-child(4){animation-delay:.24s}.hero-intro > *:nth-child(5){animation-delay:.32s}.hero-intro > *:nth-child(6){animation-delay:.4s}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+/* GLOBE */
+.globe-wrap{position:relative;display:flex;justify-content:center}
+.globe{position:relative;width:min(100%,460px);aspect-ratio:1;touch-action:pan-y;cursor:grab;user-select:none}
+.globe.drag{cursor:grabbing}
+.sphere{position:absolute;inset:6%;border-radius:50%;
+  background:radial-gradient(circle at 32% 28%, rgba(79,209,197,.20), rgba(17,25,51,.55) 45%, rgba(10,15,30,.2) 72%);
+  border:1px solid rgba(79,209,197,.22);box-shadow:inset 0 0 80px rgba(79,209,197,.08),0 40px 120px rgba(0,0,0,.45)}
+.sphere::before,.sphere::after{content:"";position:absolute;inset:0;border-radius:50%;border:1px dashed rgba(154,166,196,.16)}
+.sphere::before{transform:scaleY(.32)}
+.sphere::after{transform:scaleX(.32)}
+.medallion{position:absolute;left:50%;top:50%;width:30%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;z-index:500;
+  padding:5px;background:conic-gradient(from 210deg,var(--saffron),var(--teal),var(--saffron));box-shadow:0 18px 50px rgba(0,0,0,.5)}
+.medallion img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;border:3px solid var(--bg)}
+.tag{position:absolute;left:50%;top:50%;white-space:nowrap;font-size:13px;font-weight:500;padding:6px 12px;border-radius:999px;
+  background:rgba(22,32,63,.92);border:1px solid #2c3d6b;color:var(--text);will-change:transform,opacity}
+.tag.hot{border-color:rgba(240,176,79,.55);color:#ffd99b}
+.hint{position:absolute;bottom:-6px;left:50%;transform:translateX(-50%);font-size:13px;color:var(--muted);white-space:nowrap}
+
+/* SECTIONS */
+section{padding:84px 0}
+.sec-head{max-width:640px;margin-bottom:44px}
+h2{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:clamp(34px,4.6vw,52px);line-height:1.05;letter-spacing:-.5px}
+.sec-head p{color:var(--muted);margin-top:12px;font-size:17px}
+
+/* LEDGER */
+.ledger{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--line);border-radius:var(--radius-lg);background:rgba(17,25,51,.55);overflow:hidden}
+.ledger div{padding:26px 22px;border-right:1px solid var(--line)}
+.ledger div:last-child{border-right:0}
+.ledger strong{display:block;font-family:"Cormorant Garamond",serif;font-weight:700;font-size:48px;line-height:1;color:var(--text)}
+.ledger span{display:block;margin-top:10px;font-size:14px;color:var(--muted);line-height:1.4}
+
+/* TIMELINE */
+.timeline{position:relative;border-left:1px solid var(--line);margin-left:6px}
+.job{position:relative;padding:0 0 46px 34px}
+.job:last-child{padding-bottom:0}
+.job::before{content:"";position:absolute;left:-6px;top:8px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--saffron)}
+.job.now::before{background:var(--saffron);box-shadow:0 0 0 6px rgba(240,176,79,.18)}
+.job header{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;justify-content:space-between}
+.job h3{font-size:21px;font-weight:500}
+.job .co{color:var(--saffron);font-weight:400}
+.job time{font-size:14px;color:var(--muted)}
+.job ul{margin-top:12px;list-style:none;display:grid;gap:9px;max-width:780px}
+.job li{position:relative;padding-left:20px;color:#c3cbe0}
+.job li::before{content:"";position:absolute;left:0;top:.72em;width:8px;height:1px;background:var(--teal)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.chip{font-size:13px;padding:4px 12px;border-radius:999px;border:1px solid var(--line);color:var(--muted);background:rgba(17,25,51,.6)}
+
+/* PROJECTS */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;perspective:1200px}
+.card{position:relative;display:flex;flex-direction:column;padding:28px;border-radius:var(--radius-lg);border:1px solid var(--line);
+  background:linear-gradient(160deg,var(--surface-2),var(--surface));transform-style:preserve-3d;transition:transform .25s ease-out,border-color .2s;will-change:transform}
+.card:hover{border-color:#3a4c7a}
+.card h3{font-family:"Cormorant Garamond",serif;font-size:30px;line-height:1.05;font-weight:700;transform:translateZ(30px)}
+.card .kind{margin-top:6px;font-size:14px;color:var(--saffron);transform:translateZ(20px)}
+.card p{margin-top:16px;color:#c3cbe0;font-size:15px;transform:translateZ(14px)}
+.card .chips{margin-top:auto;padding-top:22px;transform:translateZ(22px)}
+.card.feature{background:linear-gradient(160deg,#1b2a52,var(--surface));border-color:rgba(240,176,79,.4)}
+
+/* CAPABILITIES */
+.caps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.cap{padding:26px;border:1px solid var(--line);border-radius:var(--radius-md);background:rgba(17,25,51,.5)}
+.cap h3{font-size:18px;font-weight:500;margin-bottom:14px}
+.cap .chips{margin-top:0}
+
+/* EDU */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.panel{padding:30px;border:1px solid var(--line);border-radius:var(--radius-lg);background:rgba(17,25,51,.5)}
+.panel h3{font-family:"Cormorant Garamond",serif;font-size:28px;margin-bottom:18px}
+.panel li{list-style:none;padding:14px 0;border-top:1px solid var(--line)}
+.panel li:first-of-type{border-top:0;padding-top:0}
+.panel li b{display:block;font-weight:500}
+.panel li span{color:var(--muted);font-size:15px}
+
+/* CONTACT */
+.contact{border:1px solid rgba(240,176,79,.35);border-radius:32px;padding:clamp(32px,6vw,64px);text-align:center;
+  background:radial-gradient(600px 300px at 50% 0%, rgba(240,176,79,.14), transparent 70%),var(--surface)}
+.contact p{max-width:520px;margin:16px auto 30px;color:var(--muted);font-size:17px}
+.contact .cta{justify-content:center;margin-top:0}
+footer{padding:36px 0 56px;color:var(--muted);font-size:14px;text-align:center}
+
+/* MODAL */
+dialog{margin:auto;width:min(560px,calc(100% - 32px));border:1px solid var(--line);border-radius:28px;background:var(--surface);color:var(--text);padding:clamp(24px,4vw,36px)}
+dialog::backdrop{background:rgba(3,6,14,.72);backdrop-filter:blur(8px)}
+dialog h2{font-size:38px}
+dialog .close{position:absolute;top:16px;right:18px;background:none;border:0;color:var(--muted);font-size:30px;line-height:1;cursor:pointer}
+dialog .close:hover{color:var(--text)}
+.dlg{display:grid;grid-template-columns:190px 1fr;gap:22px;margin-top:24px;align-items:center}
+.dlg img{width:100%;border-radius:16px;background:#fff;padding:8px}
+.dlg a.row{display:block;padding:16px 18px;border:1px solid var(--line);border-radius:var(--radius-md);margin-bottom:12px;transition:border-color .2s}
+.dlg a.row:hover{border-color:var(--saffron)}
+.dlg a.row b{display:block;font-weight:500}
+.dlg a.row span{font-size:14px;color:var(--muted);word-break:break-all}
+
+/* RESPONSIVE */
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:1fr;min-height:0;gap:56px}
+  .globe-wrap{order:2;padding-bottom:26px}
+  .grid3,.caps,.two{grid-template-columns:1fr}
+  .ledger{grid-template-columns:repeat(2,1fr)}
+  .ledger div{border-bottom:1px solid var(--line)}
+  .ledger div:nth-child(2n){border-right:0}
+  .ledger div:last-child{grid-column:1/-1;border-bottom:0}
+  .nav ul{display:none}
 }
-
-.glass{
-background:rgba(255,255,255,.66);
-backdrop-filter:blur(20px);
-
-border:1px solid rgba(255,255,255,.7);
-
-box-shadow:
-0 10px 40px rgba(15,23,42,.06),
-inset 0 1px 0 rgba(255,255,255,.9);
-}
-
-.gold{
-background:
-linear-gradient(135deg,#e0a146,#b56d15);
-
--webkit-background-clip:text;
-
-color:transparent;
-}
-
-.modal{
-display:none;
-}
-
-.modal.show{
-display:flex;
-}
-
-html{
-scroll-behavior:smooth;
+@media (max-width:560px){ .dlg{grid-template-columns:1fr} .dlg img{max-width:200px;margin:0 auto} section{padding:64px 0} }
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero-intro > *{animation:none}.dot{animation:none}.card{transition:none}
 }
 </style>
-
 </head>
+<body>
 
-<body class="min-h-screen">
+<nav class="nav" aria-label="Primary">
+  <div class="wrap">
+    <a class="brand" href="#top">Surya Vamshika</a>
+    <ul>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+    </ul>
+    <button class="btn primary small" type="button" data-open-contact>Get in touch</button>
+  </div>
+</nav>
 
-<div class="max-w-4xl mx-auto px-6 py-8 lg:py-12">
+<main id="top">
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-intro">
+      <div class="status"><span class="dot" aria-hidden="true"></span>Open to full-stack and backend roles</div>
+      <h1 class="name">Surya Vamshika<br />Chalapalli</h1>
+      <p class="role">Senior Full Stack &amp; Backend Engineer</p>
+      <p class="lede">I build scalable SaaS, HRMS, analytics and AI products with <b>Node.js</b>, <b>TypeScript</b>, <b>React</b> and <b>PostgreSQL</b>. Currently leading delivery of an HRMS platform for 200+ employees and building AI voice-agent features.</p>
+      <div class="cta">
+        <button class="btn primary" type="button" data-open-contact>Get in touch</button>
+        <a class="btn" href="Senior%20Fullstack%20Resume%20Surya%20Vamshika.pdf" target="_blank" rel="noopener">View resume</a>
+        <a class="btn" href="Senior%20Fullstack%20Resume%20Surya%20Vamshika.pdf" download="Surya_Vamshika_Resume.pdf">Download</a>
+      </div>
+      <div class="meta">
+        <span>Hyderabad, India</span>
+        <a href="https://github.com/suryavamshikachalapalli" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/vamshika-surya-chalapalli" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:chalapallisuryavamshika@gmail.com">Email</a>
+      </div>
+    </div>
 
-<div
-class="
-grid
-lg:grid-cols-[1.2fr_.8fr]
-gap-8
-items-center
-min-h-screen
-"
->
+    <div class="globe-wrap">
+      <div class="globe" id="globe" aria-hidden="true">
+        <div class="sphere"></div>
+        <div class="medallion"><img alt="" src="data:image/jpeg;base64,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" /></div>
+      </div>
+      <div class="hint">Drag to spin my stack</div>
+    </div>
+  </div>
+</header>
 
-<!-- LEFT -->
-
-<div>
-
-<div class="text-sm text-slate-400 mb-5">
-Senior Full Stack & Backend Engineer
+<!-- NUMBERS -->
+<div class="wrap">
+  <div class="ledger" role="list">
+    <div role="listitem"><strong>5+</strong><span>years building production SaaS</span></div>
+    <div role="listitem"><strong>200+</strong><span>employees served by the HRMS I lead</span></div>
+    <div role="listitem"><strong>7+</strong><span>core HRMS modules shipped</span></div>
+    <div role="listitem"><strong>25%</strong><span>faster APIs after performance tuning</span></div>
+    <div role="listitem"><strong>30%</strong><span>lower query latency on high-traffic MongoDB</span></div>
+  </div>
 </div>
 
-<h1
-class="
-name
-text-[46px]
-sm:text-[58px]
-lg:text-[76px]
-leading-[0.88]
-tracking-[-2px]
-max-w-[540px]
-text-slate-900
-"
->
-Surya Vamshika
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Where I've shipped</h2>
+      <p>From payroll engines to AI voice agents, I own features end to end: schema, API, UI, release and production support.</p>
+    </div>
+    <div class="timeline">
 
-<span class="gold text-[0.84em]">
-Chalapalli
-</span>
+      <article class="job now">
+        <header><h3>Full Stack Developer · <span class="co">Mayavi, AI Agent Platform</span></h3><time>May 2026 – Present</time></header>
+        <ul>
+          <li>Building the AI automation and voice-calling platform: Agents, Assistants, Teams, Automation Builder, Tool Creation, Credentials and publishing workflows.</li>
+          <li>Created reusable React/TypeScript components, schema-driven configuration panels and validation flows wired to backend APIs.</li>
+          <li>Defined API contracts, led migrations and refactors for long-term maintainability, and hardened features through PR-based code review.</li>
+        </ul>
+        <div class="chips"><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Node.js</span><span class="chip">JSON Schema</span><span class="chip">Docker</span><span class="chip">LLM integration</span></div>
+      </article>
 
-</h1>
+      <article class="job">
+        <header><h3>Technical Lead · <span class="co">HRMS Platform, Incredible Visibility</span></h3><time>Jun 2023 – Jun 2026</time></header>
+        <ul>
+          <li>Led delivery of a configurable HRMS covering employee lifecycle, payroll, attendance, leave, onboarding and documents for 200+ employees.</li>
+          <li>Architected a configurable payroll engine with salary structures, statutory deductions (PF, ESI, TDS), reimbursements and custom rules.</li>
+          <li>Automated leave accruals, policy renewals, payroll runs and attendance processing with cron-based workflows, backed by Jest suites for Leave, Payroll and Attendance.</li>
+          <li>Split the platform into Docker services (Employee, Onboarding, Leave, Attendance, Payroll) for independent deployment and scaling.</li>
+          <li>Secured it with OAuth 2.0, JWT and RBAC, set up Jenkins CI/CD, improved API performance by 25%, and mentored junior engineers.</li>
+        </ul>
+        <div class="chips"><span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">TypeScript</span><span class="chip">React</span><span class="chip">PostgreSQL</span><span class="chip">TanStack Query</span><span class="chip">Jenkins</span></div>
+      </article>
 
-<p
-class="
-mt-7
-max-w-xl
-text-slate-600
-leading-relaxed
-text-base
-lg:text-lg
-"
->
+      <article class="job">
+        <header><h3>Backend Developer · <span class="co">HelloLeads, Incredible Visibility</span></h3><time>Mar 2021 – Jun 2023</time></header>
+        <ul>
+          <li>Designed REST APIs and analytics pipelines for a visitor tracking and lead platform on Node.js, Express and MongoDB.</li>
+          <li>Owned Stripe subscription billing: webhooks, plan management and the full payment lifecycle.</li>
+          <li>Cut high-traffic query latency by about 30% by optimizing MongoDB queries and aggregation pipelines.</li>
+          <li>Built internal admin dashboards in Vue.js and Tailwind CSS for monitoring, funnel analysis and billing.</li>
+        </ul>
+        <div class="chips"><span class="chip">Node.js</span><span class="chip">MongoDB</span><span class="chip">Stripe</span><span class="chip">Vue.js</span><span class="chip">Cron pipelines</span></div>
+      </article>
 
-Building scalable SaaS products and enterprise systems using
-<span class="font-medium">Node.js</span>,
-<span class="font-medium">React</span>,
-<span class="font-medium">TypeScript</span>,
-and
-<span class="font-medium">PostgreSQL</span>.
+      <article class="job">
+        <header><h3>Programmer Analyst · <span class="co">Walmart</span></h3><time>Jun 2018 – Dec 2018</time></header>
+        <ul>
+          <li>Built Node.js APIs connecting internal enterprise systems to the OneOps cloud platform, secured with OAuth 2.0.</li>
+          <li>Delivered operational tooling and supported enterprise migrations and production.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
 
-</p>
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Products I've built</h2>
+      <p>Two I designed myself, and the HRMS platform I led. Hover a card to tilt it.</p>
+    </div>
+    <div class="grid3">
+      <article class="card feature tilt">
+        <h3>Operentiq</h3>
+        <div class="kind">AI operational intelligence for support teams</div>
+        <p>A live SaaS I designed, built and deployed alone. Teams upload their knowledge base, and an AI assistant answers from it, declining out-of-scope questions instead of making things up. Includes incident history, similar-incident patterns and SOP guidance.</p>
+        <div class="chips"><span class="chip">Next.js</span><span class="chip">TypeScript</span><span class="chip">Supabase</span><span class="chip">PostgreSQL</span><span class="chip">Tailwind</span></div>
+      </article>
+      <article class="card tilt">
+        <h3>Configurable HRMS</h3>
+        <div class="kind">Payroll, attendance and leave for 200+ people</div>
+        <p>A modular enterprise platform with a rules-driven payroll engine, scheduled automation, manager transfer and approval workflows, and role-based access across containerized services.</p>
+        <div class="chips"><span class="chip">Node.js</span><span class="chip">React</span><span class="chip">PostgreSQL</span><span class="chip">Docker</span><span class="chip">Jest</span></div>
+      </article>
+      <article class="card tilt">
+        <h3>Task Tracking Tool</h3>
+        <div class="kind">Internal task, time and attendance platform</div>
+        <p>Task allocation, clock-in/out with billable hours, role-based access for developers, QA, managers, HR and admins, plus dashboards with CSV and Excel export.</p>
+        <div class="chips"><span class="chip">React</span><span class="chip">Express</span><span class="chip">MongoDB Atlas</span><span class="chip">JWT</span></div>
+      </article>
+    </div>
+  </div>
+</section>
 
 <!-- SKILLS -->
-
-<div class="mt-6 flex flex-wrap gap-2">
-
-<span class="px-3 py-1 rounded-full bg-white text-sm">
-Node.js
-</span>
-
-<span class="px-3 py-1 rounded-full bg-white text-sm">
-React
-</span>
-
-<span class="px-3 py-1 rounded-full bg-white text-sm">
-TypeScript
-</span>
-
-<span class="px-3 py-1 rounded-full bg-white text-sm">
-PostgreSQL
-</span>
-
-</div>
-
-<!-- CTA -->
-
-<div class="grid sm:grid-cols-2 gap-4 mt-10">
-
-<div class="glass rounded-3xl p-4">
-
-<button
-onclick="openCard()"
-class="
-w-full
-rounded-xl
-bg-violet-100
-hover:bg-violet-200
-py-3
-font-medium
-transition
-"
->
-Get in Touch
-</button>
-
-</div>
-
-<div class="glass rounded-3xl p-4">
-
-<div class="flex gap-2">
-
-<a
-href="./Senior Fullstack Resume Surya Vamshika.pdf"
-target="_blank"
-class="
-flex-1
-rounded-xl
-bg-slate-100
-py-3
-text-center
-text-sm
-hover:bg-slate-200
-transition
-"
->
-View
-</a>
-
-<a
-href="./Senior Fullstack Resume Surya Vamshika.pdf"
-download="Surya_Vamshika_Resume.pdf"
-class="
-flex-1
-rounded-xl
-bg-green-100
-py-3
-text-center
-text-sm
-text-green-700
-hover:bg-green-200
-transition
-"
->
-Download
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- RIGHT -->
-
-<div>
-
-<div
-class="
-glass
-rounded-[28px]
-p-6
-transition
-hover:-translate-y-1
-"
->
-
-<div class="flex justify-between items-start">
-
-<div>
-
-<div class="text-xs uppercase tracking-[2px] text-slate-400">
-Profile
-</div>
-
-<div class="mt-2 text-lg text-slate-700">
-Open to Full-Stack / Backend Roles
-</div>
-
-</div>
-
-<div
-class="
-px-3
-py-1
-rounded-full
-bg-green-50
-text-green-700
-text-xs
-"
->
-Available
-</div>
-
-</div>
-
-<div class="mt-8 space-y-6">
-
-<div>
-
-<div class="text-xs uppercase tracking-[2px] text-slate-400">
-Location
-</div>
-
-<div class="mt-1">
-📍 Hyderabad · India
-</div>
-
-</div>
-
-<div>
-
-<div class="text-xs uppercase tracking-[2px] text-slate-400">
-Education
-</div>
-
-<div class="mt-1 font-medium">
-M.S. Computer Science
-</div>
-
-<div class="text-slate-500">
-Kent State University
-</div>
-
-</div>
-
-<div>
-
-<div class="text-xs uppercase tracking-[2px] text-slate-400 mb-3">
-Connect
-</div>
-
-<div class="flex gap-2 flex-wrap">
-
-<a
-href="mailto:suryavamshika.chalapalli@gmail.com"
-class="
-px-4
-py-2
-rounded-full
-bg-white/70
-hover:scale-[1.03]
-transition
-text-sm
-"
->
-Email
-</a>
-
-<a
-target="_blank"
-href="https://www.linkedin.com/in/vamshika-surya-chalapalli-762010218/"
-class="
-px-4
-py-2
-rounded-full
-bg-white/70
-hover:scale-[1.03]
-transition
-text-sm
-"
->
-LinkedIn
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-<div
-class="
-border-t
-border-white/40
-mt-8
-pt-6
-grid
-grid-cols-3
-"
->
-
-<div class="text-center">
-
-<div class="text-2xl text-amber-600 font-semibold">
-5+
-</div>
-
-<div class="text-xs text-slate-400">
-Years
-</div>
-
-</div>
-
-<div class="text-center">
-
-<div class="text-lg text-amber-600 font-semibold">
-Node
-</div>
-
-<div class="text-xs text-slate-400">
-Backend
-</div>
-
-</div>
-
-<div class="text-center">
-
-<div class="text-lg text-amber-600 font-semibold">
-React
-</div>
-
-<div class="text-xs text-slate-400">
-Frontend
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- MODAL -->
-
-<div
-id="modal"
-class="
-modal
-fixed
-inset-0
-bg-black/35
-backdrop-blur-xl
-items-center
-justify-center
-p-5
-"
->
-
-<div
-class="
-glass
-rounded-[28px]
-w-full
-max-w-xl
-p-5
-sm:p-7
-relative
-"
->
-
-<button
-onclick="closeCard()"
-class="absolute top-5 right-5 text-3xl"
->
-×
-</button>
-
-<h2 class="name text-3xl sm:text-5xl">
-Get in Touch
-</h2>
-
-<p class="text-slate-500 mt-2">
-Scan QR or reach out directly
-</p>
-
-<div class="grid md:grid-cols-[220px_1fr] gap-6 mt-8">
-
-<div>
-
-<img
-class="rounded-2xl"
-src="https://quickchart.io/qr?text=https://wa.me/919908065534"
-/>
-
-</div>
-
-<div class="space-y-3">
-
-<a
-target="_blank"
-href="https://wa.me/919908065534"
-class="
-block
-rounded-2xl
-bg-green-50
-p-5
-"
->
-
-<div class="font-semibold">
-WhatsApp
-</div>
-
-<div>
-+91 9908065534
-</div>
-
-</a>
-
-<a
-href="mailto:suryavamshika.chalapalli@gmail.com"
-class="
-block
-rounded-2xl
-bg-violet-50
-p-5
-"
->
-
-<div class="font-semibold">
-Email
-</div>
-
-<div>
-suryavamshika.chalapalli@gmail.com
-</div>
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>What I work with</h2>
+      <p>Strongest on the backend, comfortable across the whole stack.</p>
+    </div>
+    <div class="caps">
+      <div class="cap"><h3>Frontend</h3><div class="chips"><span class="chip">React</span><span class="chip">Next.js</span><span class="chip">TypeScript</span><span class="chip">TanStack Query</span><span class="chip">Tailwind CSS</span><span class="chip">Vue.js</span></div></div>
+      <div class="cap"><h3>Backend and APIs</h3><div class="chips"><span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">REST</span><span class="chip">WebSockets</span><span class="chip">Microservice patterns</span><span class="chip">Cron workflows</span></div></div>
+      <div class="cap"><h3>Data</h3><div class="chips"><span class="chip">PostgreSQL</span><span class="chip">MongoDB</span><span class="chip">Supabase</span><span class="chip">Redis</span><span class="chip">Query optimization</span></div></div>
+      <div class="cap"><h3>Security</h3><div class="chips"><span class="chip">JWT</span><span class="chip">OAuth 2.0</span><span class="chip">RBAC</span><span class="chip">SSO concepts</span></div></div>
+      <div class="cap"><h3>Delivery</h3><div class="chips"><span class="chip">Docker</span><span class="chip">Jenkins CI/CD</span><span class="chip">Jest</span><span class="chip">Git / Bitbucket</span><span class="chip">Production debugging</span></div></div>
+      <div class="cap"><h3>AI and integrations</h3><div class="chips"><span class="chip">OpenAI APIs</span><span class="chip">LLM workflows</span><span class="chip">Twilio Voice</span><span class="chip">Stripe</span><span class="chip">Zendesk</span><span class="chip">SendGrid</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="wrap two">
+    <div class="panel">
+      <h3>Education</h3>
+      <ul>
+        <li><b>M.S. Computer &amp; Information Sciences</b><span>Kent State University, Ohio, USA · 2016</span></li>
+        <li><b>B.Tech Computer Science &amp; Engineering</b><span>Guru Nanak Institute of Technology, Hyderabad · 2014</span></li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Certifications</h3>
+      <ul>
+        <li><b>McKinsey Forward Program</b><span>McKinsey &amp; Company</span></li>
+        <li><b>Claude AI in Action</b><span>Anthropic</span></li>
+        <li><b>Claude 101</b><span>Anthropic</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="padding-top:20px">
+  <div class="wrap">
+    <div class="contact">
+      <h2>Let's build something solid</h2>
+      <p>I'm looking for Full Stack, Senior Backend, Product Engineer and SaaS platform roles where I can own outcomes. Message me on WhatsApp or email.</p>
+      <div class="cta">
+        <button class="btn primary" type="button" data-open-contact>Get in touch</button>
+        <a class="btn" href="mailto:chalapallisuryavamshika@gmail.com">Send an email</a>
+        <a class="btn" href="https://www.linkedin.com/in/vamshika-surya-chalapalli" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>© <span id="yr"></span> Surya Vamshika Chalapalli · Hyderabad, India</footer>
+
+<dialog id="contactDlg" aria-labelledby="dlgTitle">
+  <button class="close" type="button" aria-label="Close" data-close>&times;</button>
+  <h2 id="dlgTitle" class="serif">Get in touch</h2>
+  <p style="color:var(--muted);margin-top:6px">Scan the code or use a link below.</p>
+  <div class="dlg">
+    <img alt="QR code that opens WhatsApp chat with Surya" src="https://quickchart.io/qr?size=300&text=https://wa.me/919908065534" loading="lazy" />
+    <div>
+      <a class="row" href="https://wa.me/919908065534" target="_blank" rel="noopener"><b>WhatsApp</b><span>+91 99080 65534</span></a>
+      <a class="row" href="mailto:chalapallisuryavamshika@gmail.com"><b>Email</b><span>chalapallisuryavamshika@gmail.com</span></a>
+    </div>
+  </div>
+</dialog>
 
 <script>
+document.getElementById('yr').textContent = new Date().getFullYear();
 
-const modal =
-document.getElementById("modal");
+/* Contact dialog */
+const dlg = document.getElementById('contactDlg');
+document.querySelectorAll('[data-open-contact]').forEach(b => b.addEventListener('click', () => dlg.showModal()));
+dlg.querySelector('[data-close]').addEventListener('click', () => dlg.close());
+dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
 
-function openCard(){
-modal.classList.add("show");
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* 3D skill globe */
+(function(){
+  const root = document.getElementById('globe');
+  const tags = [
+    ['Node.js',1],['TypeScript',1],['React',1],['Next.js',1],['PostgreSQL',1],['MongoDB',0],['Supabase',0],
+    ['Docker',0],['Redis',0],['Jest',0],['Jenkins',0],['REST APIs',1],['OAuth 2.0',0],['JWT',0],['RBAC',0],
+    ['WebSockets',0],['OpenAI',1],['Twilio Voice',0],['Stripe',0],['TanStack Query',0],['Express',0],
+    ['Tailwind',0],['Zendesk',0],['SendGrid',0],['Vue.js',0],['Cron jobs',0]
+  ];
+  const n = tags.length, golden = Math.PI * (3 - Math.sqrt(5));
+  const pts = tags.map((t,i) => {
+    const y = 1 - (i / (n - 1)) * 2, r = Math.sqrt(1 - y*y), th = golden * i;
+    const el = document.createElement('span');
+    el.className = 'tag' + (t[1] ? ' hot' : ''); el.textContent = t[0];
+    root.appendChild(el);
+    return {x:Math.cos(th)*r, y, z:Math.sin(th)*r, el};
+  });
+  let ax = -0.25, ay = 0, vx = 0, vy = reduce ? 0 : 0.0035, drag = false, lx = 0, ly = 0;
+  function draw(){
+    const R = root.clientWidth * 0.40, P = R * 3.2;
+    const cx = Math.cos(ax), sx = Math.sin(ax), cy = Math.cos(ay), sy = Math.sin(ay);
+    for (const p of pts){
+      let x = p.x*cy + p.z*sy, z = -p.x*sy + p.z*cy, y = p.y;
+      const y2 = y*cx - z*sx, z2 = y*sx + z*cx;
+      const s = P / (P - z2*R), depth = (z2 + 1) / 2;
+      p.el.style.transform = `translate(-50%,-50%) translate(${x*R*s}px,${y2*R*s}px) scale(${(0.72 + 0.4*depth).toFixed(3)})`;
+      p.el.style.opacity = (0.28 + 0.72*depth).toFixed(2);
+      p.el.style.zIndex = z2 > 0.05 ? 600 + Math.round(z2*100) : Math.round(depth*100);
+    }
+  }
+  function tick(){
+    if (!drag){ ay += vy + vx; ax += vx*0 ; vx *= 0.95; }
+    draw(); requestAnimationFrame(tick);
+  }
+  root.addEventListener('pointerdown', e => { drag = true; lx = e.clientX; ly = e.clientY; root.classList.add('drag'); root.setPointerCapture(e.pointerId); });
+  root.addEventListener('pointermove', e => {
+    if (!drag) return;
+    const dx = e.clientX - lx, dy = e.clientY - ly; lx = e.clientX; ly = e.clientY;
+    ay += dx * 0.008; ax = Math.max(-1.1, Math.min(1.1, ax - dy * 0.008)); vx = dx * 0.0008; draw();
+  });
+  const end = () => { drag = false; root.classList.remove('drag'); };
+  root.addEventListener('pointerup', end); root.addEventListener('pointercancel', end);
+  addEventListener('resize', draw);
+  if (reduce) draw(); else tick();
+})();
+
+/* Card tilt */
+if (!reduce && matchMedia('(hover:hover)').matches){
+  document.querySelectorAll('.tilt').forEach(c => {
+    c.addEventListener('pointermove', e => {
+      const b = c.getBoundingClientRect(), px = (e.clientX - b.left)/b.width - .5, py = (e.clientY - b.top)/b.height - .5;
+      c.style.transform = `rotateY(${px*10}deg) rotateX(${-py*10}deg) translateY(-4px)`;
+    });
+    c.addEventListener('pointerleave', () => c.style.transform = '');
+  });
 }
-
-function closeCard(){
-modal.classList.remove("show");
-}
-
-window.onclick=(e)=>{
-if(e.target===modal){
-closeCard();
-}
-};
-
-document.addEventListener(
-"keydown",
-(e)=>{
-if(e.key==="Escape"){
-closeCard();
-}
-}
-);
-
 </script>
-
 </body>
 </html>
