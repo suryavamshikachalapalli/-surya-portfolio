@@ -156,16 +156,6 @@ dialog::backdrop{background:rgba(3,6,14,.72);backdrop-filter:blur(8px)}
 .rows a.row b{display:block;font-weight:500}
 .rows a.row span{font-size:14px;color:var(--muted);word-break:break-all}
 
-#resumeDlg{width:min(980px,calc(100% - 24px));height:min(92vh,1100px);padding:0;overflow:hidden}
-#resumeDlg[open]{display:flex;flex-direction:column}
-.rbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:14px 18px;border-bottom:1px solid var(--line);background:var(--surface-2)}
-.rbar h2{font-size:22px;letter-spacing:0}
-.rbar .acts{display:flex;align-items:center;gap:8px}
-.rbody{flex:1;min-height:0;background:#2a2f3d}
-.rbody object{width:100%;height:100%;display:block;border:0}
-.rfallback{padding:40px 24px;text-align:center;color:var(--muted)}
-.rfallback .cta{justify-content:center}
-
 /* RESPONSIVE */
 @media (max-width:900px){
   .hero .wrap{grid-template-columns:1fr;gap:40px}
@@ -192,7 +182,7 @@ dialog::backdrop{background:rgba(3,6,14,.72);backdrop-filter:blur(8px)}
       <li><a href="#education">Education</a></li>
     </ul>
     <div class="nav-actions">
-      <a class="btn small" href="Senior%20Fullstack%20Resume%20Surya%20Vamshika.pdf" target="_blank" rel="noopener" data-view-resume>View resume</a>
+      <a class="btn small" href="./Surya_Vamshika_Chalapalli_Resume.pdf" target="_blank" rel="noopener noreferrer">View Resume</a>
       <button class="btn primary small" type="button" data-open-contact>Get in touch</button>
     </div>
   </div>
@@ -203,13 +193,13 @@ dialog::backdrop{background:rgba(3,6,14,.72);backdrop-filter:blur(8px)}
 <header class="hero">
   <div class="wrap">
     <div>
-      <div class="status"><span class="dot" aria-hidden="true"></span>Open to remote and relocation</div>
+      <div class="status"><span class="dot" aria-hidden="true"></span>Open to new opportunities</div>
       <h1 class="name">Surya Vamshika<br />Chalapalli</h1>
-      <p class="role">Senior Full Stack Engineer</p>
-      <p class="lede">I build SaaS and AI agent products with <b>React</b>, <b>TypeScript</b>, <b>Node.js</b> and <b>PostgreSQL</b>. I’m currently building integrations, RAG and agent-configuration features for a multi-tenant AI voice and agent platform. Before that, I led technical delivery of an HRMS used by 200 employees that cut a week-long payroll process to hours.</p>
+      <p class="role">Senior Full Stack Engineer · 5+ years of experience</p>
+      <p class="lede">I build SaaS and AI agent products with <b>React</b>, <b>TypeScript</b>, <b>Node.js</b> and <b>PostgreSQL</b>. I currently build integrations, RAG and agent configuration features for a multi-tenant AI voice and agent platform. Previously, I led technical delivery of an HRMS used by 200 employees. It cut payroll processing from a week to hours.</p>
       <div class="cta">
-        <a class="btn primary" href="Senior%20Fullstack%20Resume%20Surya%20Vamshika.pdf" target="_blank" rel="noopener" data-view-resume>View resume</a>
-        <a class="btn" href="Senior%20Fullstack%20Resume%20Surya%20Vamshika.pdf" download="Surya_Vamshika_Chalapalli_Resume.pdf">Download resume</a>
+        <a class="btn primary" href="./Surya_Vamshika_Chalapalli_Resume.pdf" target="_blank" rel="noopener noreferrer">View Resume</a>
+        <a class="btn" href="./Surya_Vamshika_Chalapalli_Resume.pdf" download>Download Resume</a>
         <button class="btn" type="button" data-open-contact>Get in touch</button>
       </div>
       <div class="meta">
@@ -226,7 +216,7 @@ dialog::backdrop{background:rgba(3,6,14,.72);backdrop-filter:blur(8px)}
         <div><dt>Current role</dt><dd>Senior Engineer – Full Stack (Level 3), Incredible Visibility</dd></div>
         <div><dt>Focus</dt><dd>SaaS platforms and AI agent products</dd></div>
         <div><dt>Core stack</dt><dd>React, TypeScript, Node.js, PostgreSQL</dd></div>
-        <div><dt>Location</dt><dd>Hyderabad, India · open to remote and relocation</dd></div>
+        <div><dt>Location</dt><dd>Hyderabad, India · open to remote work and relocation</dd></div>
         <div><dt>Education</dt><dd>M.S. Computer &amp; Information Sciences, Kent State University</dd></div>
       </dl>
     </aside>
@@ -381,11 +371,11 @@ dialog::backdrop{background:rgba(3,6,14,.72);backdrop-filter:blur(8px)}
   <div class="wrap">
     <div class="contact">
       <h2>Let’s talk</h2>
-      <p>I’m looking for Full Stack, Senior Backend, Product Engineer and AI platform roles, remote or with relocation. Message me on WhatsApp or email.</p>
+      <p>I’m looking for Full Stack, Senior Backend, Product Engineer and AI platform roles. I’m open to remote work and relocation.</p>
       <div class="cta">
         <button class="btn primary" type="button" data-open-contact>Get in touch</button>
-        <a class="btn" href="Senior%20Fullstack%20Resume%20Surya%20Vamshika.pdf" target="_blank" rel="noopener" data-view-resume>View resume</a>
-        <a class="btn" href="Senior%20Fullstack%20Resume%20Surya%20Vamshika.pdf" download="Surya_Vamshika_Chalapalli_Resume.pdf">Download resume</a>
+        <a class="btn primary" href="./Surya_Vamshika_Chalapalli_Resume.pdf" target="_blank" rel="noopener noreferrer">View Resume</a>
+        <a class="btn" href="./Surya_Vamshika_Chalapalli_Resume.pdf" download>Download Resume</a>
       </div>
     </div>
   </div>
@@ -406,19 +396,6 @@ dialog::backdrop{background:rgba(3,6,14,.72);backdrop-filter:blur(8px)}
   </div>
 </dialog>
 
-<!-- Resume viewer -->
-<dialog id="resumeDlg" aria-labelledby="resumeTitle">
-  <div class="rbar">
-    <h2 id="resumeTitle" class="serif">Resume</h2>
-    <div class="acts">
-      <a class="btn primary small" href="Senior%20Fullstack%20Resume%20Surya%20Vamshika.pdf" download="Surya_Vamshika_Chalapalli_Resume.pdf">Download</a>
-      <a class="btn small" href="Senior%20Fullstack%20Resume%20Surya%20Vamshika.pdf" target="_blank" rel="noopener">Open in new tab</a>
-      <button class="close" type="button" aria-label="Close resume" data-close>&times;</button>
-    </div>
-  </div>
-  <div class="rbody" id="resumeBody"></div>
-</dialog>
-
 <script>
 document.getElementById('yr').textContent = new Date().getFullYear();
 
@@ -426,29 +403,8 @@ document.getElementById('yr').textContent = new Date().getFullYear();
 const contactDlg = document.getElementById('contactDlg');
 document.querySelectorAll('[data-open-contact]').forEach(b => b.addEventListener('click', () => contactDlg.showModal()));
 
-/* Resume viewer: in-page on desktop, new tab on phones or browsers that can't show PDFs inline */
-const resumeDlg = document.getElementById('resumeDlg');
-const resumeBody = document.getElementById('resumeBody');
-const PDF = 'Senior%20Fullstack%20Resume%20Surya%20Vamshika.pdf';
-function canInline(){
-  return navigator.pdfViewerEnabled !== false && matchMedia('(min-width: 760px)').matches;
-}
-document.querySelectorAll('[data-view-resume]').forEach(a => a.addEventListener('click', e => {
-  if (!canInline()) return;
-  e.preventDefault();
-  resumeBody.innerHTML = '<object data="' + PDF + '#view=FitH" type="application/pdf" aria-label="Resume PDF">' +
-    '<div class="rfallback"><p>Your browser can’t show the PDF here.</p>' +
-    '<div class="cta"><a class="btn primary" href="' + PDF + '" target="_blank" rel="noopener">Open resume</a>' +
-    '<a class="btn" href="' + PDF + '" download>Download</a></div></div></object>';
-  resumeDlg.showModal();
-}));
-resumeDlg.addEventListener('close', () => { resumeBody.innerHTML = ''; });
-
-/* Shared dialog close behaviour */
-[contactDlg, resumeDlg].forEach(d => {
-  d.querySelectorAll('[data-close]').forEach(b => b.addEventListener('click', () => d.close()));
-  d.addEventListener('click', e => { if (e.target === d) d.close(); });
-});
+contactDlg.querySelector('[data-close]').addEventListener('click', () => contactDlg.close());
+contactDlg.addEventListener('click', e => { if (e.target === contactDlg) contactDlg.close(); });
 </script>
 </body>
 </html>
